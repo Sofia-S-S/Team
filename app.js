@@ -177,7 +177,7 @@ function addEngineer() {
     .prompt([
       {
         type: "input",
-        name: "engeneerName",
+        name: "engineerName",
         message: "What is your engeneer's name?",
         validate: answer => {
           if (answer !== "") {
@@ -188,7 +188,7 @@ function addEngineer() {
       },
       {
         type: "input",
-        name: "engeneerId",
+        name: "engineerId",
         message: "What is your engeneer's id?",
         validate: answer => {
           const pass = answer.match(/^[1-9]\d*$/);
