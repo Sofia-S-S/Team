@@ -9,6 +9,7 @@ const outputPath = path.resolve(__dirname, "output", "team.html");
 const render = require("./lib/htmlRenderer");
 const teamMembers = [];
 const idArray = [];
+const templatesDir = path.resolve(__dirname, "../templates");
 
 function createManager() {
   inquirer
@@ -104,8 +105,9 @@ function createTeam() {
     });
 }
 function buildTeam() {
-  const htmlFile = `<html>${teamMembers[0].name}</html>`;
-  fs.writeFileSync(outputPath, htmlFile, "utf-8");
+  // const htmlFile = `<html>${teamMembers[0].name}</html>`;
+  //fs.writeFileSync(outputPath, htmlFile, "utf-8");
+  fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
 }
 function addIntern() {
   inquirer
